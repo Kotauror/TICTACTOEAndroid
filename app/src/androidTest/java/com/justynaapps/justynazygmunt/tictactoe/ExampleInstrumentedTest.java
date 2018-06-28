@@ -10,8 +10,10 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.Assert.assertEquals;
 
@@ -37,6 +39,41 @@ public class ExampleInstrumentedTest {
     @Test
     public void HasTicTacToeDisplayedOnMainScreen() {
         onView(withText("Tic Tac Toe")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void ClickedPlaceIsMarkedWithX() {
+        onView(withId(R.id.place_number_1)).perform(click());
+
+        onView(withId(R.id.place_number_1)).check(matches(withText("X")));
+    }
+
+    @Test
+    public void ClickedPlaceIsMarkedWithO() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+
+        onView(withId(R.id.place_number_2)).check(matches(withText("O")));
+    }
+
+    @Test
+    public void UserCannotChangeOnceClickedPlace() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_1)).perform(click());
+
+        onView(withId(R.id.place_number_1)).check(matches(withText("X")));
+    }
+
+    @Test
+    public void UserCannotTickAPlaceOnceGameIsOver() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_4)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+        onView(withId(R.id.place_number_5)).perform(click());
+        onView(withId(R.id.place_number_3)).perform(click());
+        onView(withId(R.id.place_number_6)).perform(click());
+
+        onView(withId(R.id.place_number_6)).check(matches(withText("6")));
     }
 }
 
