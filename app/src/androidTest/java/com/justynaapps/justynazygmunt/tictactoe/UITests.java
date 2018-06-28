@@ -38,7 +38,7 @@ public class UITests {
 
     @Test
     public void HasTicTacToeDisplayedOnMainScreen() {
-        onView(withText("Tic Tac Toe")).check(matches(isDisplayed()));
+        onView(withText("TICTACTOE")).check(matches(isDisplayed()));
     }
 
     @Test
