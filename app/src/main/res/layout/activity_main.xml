@@ -11,10 +11,10 @@
 
         android:id="@+id/tableLayout"
         android:layout_width="0dp"
-        android:layout_height="275dp"
+        android:layout_height="228dp"
         android:layout_centerHorizontal="true"
 
-        android:layout_marginBottom="172dp"
+        android:layout_marginBottom="140dp"
         android:layout_marginEnd="13dp"
         android:layout_marginStart="13dp"
         android:gravity="center_horizontal|center"
@@ -23,7 +23,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4">
 
         <TableRow
             android:layout_width="fill_parent"
@@ -142,6 +143,18 @@
 
 
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="106dp"
+        android:layout_height="79dp"
+        android:layout_marginBottom="72dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintBottom_toTopOf="@+id/tableLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/light" />
 
 
 </android.support.constraint.ConstraintLayout>
