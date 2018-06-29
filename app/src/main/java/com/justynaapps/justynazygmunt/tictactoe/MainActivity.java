@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private void createMoveListenersForFieldsOnGrid() {
         for (int cellNumber = 1; cellNumber < gameEngine.getBoard().getPlaces().length +1; cellNumber++ ){
             final TextView singleGrid = getTextViewForId(cellNumber);
-            MoveListener moveListener = new MoveListener(singleGrid, cellNumber, gameEngine);
+            MoveListener moveListener = new MoveListener(getApplicationContext(), singleGrid, cellNumber, gameEngine);
             singleGrid.setOnClickListener(moveListener);
         }
     }
