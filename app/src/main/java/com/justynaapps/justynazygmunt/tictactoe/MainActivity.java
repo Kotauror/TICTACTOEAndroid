@@ -11,7 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Board board;
-    String currentSign;
+    private String currentSign;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,12 @@ public class MainActivity extends AppCompatActivity {
         board = new Board(3);
         currentSign = "X";
 
+        createOnClickListenersForFieldsOnGrid();
+        renderGridWithNumbers();
+    }
+
+
+    private void createOnClickListenersForFieldsOnGrid() {
         for (int i = 1; i < board.getPlaces().length +1; i++ ){
             final TextView singleGrid = getTextViewForId(i);
             singleGrid.setOnClickListener(new View.OnClickListener() {
@@ -35,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-        renderGridWithNumbers();
     }
 
     private TextView getTextViewForId(int i) {
