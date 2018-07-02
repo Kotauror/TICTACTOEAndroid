@@ -8,7 +8,7 @@ import com.core.tictactoe.Board;
 
 public class MainActivity extends AppCompatActivity {
 
-    private GameEngine gameEngine;
+    private MobileGame mobileGame;
 
 
     @Override
@@ -26,13 +26,13 @@ public class MainActivity extends AppCompatActivity {
         Board board = new Board(3);
         MobilePlayer player1 = new MobilePlayer("X");
         MobilePlayer player2 = new MobilePlayer("O");
-        this.gameEngine = new GameEngine(board, player1, player2);
+        this.mobileGame = new MobileGame(board, player1, player2);
     }
 
     private void createMoveListenersForFieldsOnGrid() {
-        for (int cellNumber = 1; cellNumber < gameEngine.getBoard().getPlaces().length +1; cellNumber++ ){
+        for (int cellNumber = 1; cellNumber < mobileGame.getBoard().getPlaces().length +1; cellNumber++ ){
             final TextView singleGrid = getTextViewForId(cellNumber);
-            MoveListener moveListener = new MoveListener(singleGrid, cellNumber, gameEngine);
+            MoveListener moveListener = new MoveListener(getApplicationContext(), singleGrid, cellNumber, mobileGame);
             singleGrid.setOnClickListener(moveListener);
         }
     }
@@ -43,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void renderBoard() {
-        for (int i = 1; i < gameEngine.getBoard().getPlaces().length +1 ; i++) {
+        for (int i = 1; i < mobileGame.getBoard().getPlaces().length +1 ; i++) {
             final TextView placeOnMobileGrid = getTextViewForId(i);
-            placeOnMobileGrid.setText(gameEngine.getBoard().valueAtIndex(i-1));
+            placeOnMobileGrid.setText(mobileGame.getBoard().valueAtIndex(i-1));
         }
     }
 }
