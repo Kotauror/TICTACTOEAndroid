@@ -26,9 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private void createGame() {
         Board board = new Board(3);
         MobilePlayer player1 = new MobilePlayer("X");
-        MobilePlayer player2 = new MobilePlayer("O");
-//        ComputerPlayer computerPlayer = new ComputerPlayer("O");
-        this.mobileGame = new MobileGame(board, player1, player2);
+//        MobilePlayer player2 = new MobilePlayer("O");
+        Renderer renderer = new Renderer();
+        ComputerPlayer computerPlayer = new ComputerPlayer("O");
+        this.mobileGame = new MobileGame(board, player1, computerPlayer, renderer);
     }
 
     private void createMoveListenersForFieldsOnGrid() {
@@ -39,15 +40,19 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private TextView getTextViewForId(int i) {
+    protected MobileGame getMobileGame() {
+        return mobileGame;
+    }
+
+    protected TextView getTextViewForId(int i) {
         int idOfWindowInMobileGrid = getResources().getIdentifier("place_number_" + i, "id", getPackageName());
         return findViewById(idOfWindowInMobileGrid);
     }
 
-    private void renderBoard() {
-        for (int i = 1; i < mobileGame.getBoard().getPlaces().length +1 ; i++) {
+    protected void renderBoard() {
+        for (int i = 1; i < getMobileGame().getBoard().getPlaces().length +1 ; i++) {
             final TextView placeOnMobileGrid = getTextViewForId(i);
-            placeOnMobileGrid.setText(mobileGame.getBoard().valueAtIndex(i-1));
+            placeOnMobileGrid.setText(getMobileGame().getBoard().valueAtIndex(i-1));
         }
     }
 }

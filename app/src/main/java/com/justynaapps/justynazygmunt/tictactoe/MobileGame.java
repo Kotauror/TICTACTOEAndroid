@@ -7,8 +7,11 @@ import com.core.tictactoe.Player;
 
 public class MobileGame extends Game {
 
-    public MobileGame(Board board, Player playerOne, Player playerTwo) {
+    private Renderer renderer;
+
+    public MobileGame(Board board, Player playerOne, Player playerTwo, Renderer renderer) {
         super(null, board, playerOne, playerTwo);
+        this.renderer = renderer;
     }
 
     public void playMove(int position) {
@@ -20,6 +23,8 @@ public class MobileGame extends Game {
         if (this.getActivePlayer() instanceof ComputerPlayer && !this.getBoard().isWon() && !this.getBoard().isTie()) {
             int computerPosition = getActivePlayer().pickPosition(null, this.getBoard());
             this.getBoard().putSignOnBoard(this.getActivePlayer().getSign(), computerPosition);
+            switchPlayers();
         }
+//        renderer.renderBoard();
     }
 }
