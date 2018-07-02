@@ -24,7 +24,7 @@ public class MoveListener implements View.OnClickListener {
             int numberPickedByUser = Integer.parseInt(this.singleGrid.getText().toString());
             this.mobileGame.playMove(numberPickedByUser);
             updateView(numberPickedByUser);
-//            mobileGame.afterClick();
+            mobileGame.afterClick();
             // here in the future:
             // 1. afterClick() method - sends signal that the move was made to trigger other actions.
             // 2. Messanger.InformOfMove(numberPickedByUser, mobileGame.getPassivePlayer().getSign();)
