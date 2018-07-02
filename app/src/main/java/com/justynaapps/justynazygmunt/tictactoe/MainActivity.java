@@ -5,10 +5,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.core.tictactoe.Board;
+import com.core.tictactoe.ComputerPlayer;
 
 public class MainActivity extends AppCompatActivity {
 
     private MobileGame mobileGame;
+    private ComputerPlayer computerPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
         Board board = new Board(3);
         MobilePlayer player1 = new MobilePlayer("X");
         MobilePlayer player2 = new MobilePlayer("O");
+//        ComputerPlayer computerPlayer = new ComputerPlayer("O");
         this.mobileGame = new MobileGame(board, player1, player2);
     }
 
