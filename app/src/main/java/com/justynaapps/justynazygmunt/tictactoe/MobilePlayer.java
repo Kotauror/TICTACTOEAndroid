@@ -6,10 +6,10 @@ import com.core.tictactoe.Player;
 
 public class MobilePlayer extends Player {
 
-    private String sign;
+//    private String sign;
 
     public MobilePlayer(String sign) {
-        this.sign = sign;
+        super(sign);
     }
 
     @Override
@@ -20,10 +20,5 @@ public class MobilePlayer extends Player {
     @Override
     public String getType() {
         return null;
-    }
-
-    @Override
-    public String getSign() {
-        return this.sign;
     }
 }

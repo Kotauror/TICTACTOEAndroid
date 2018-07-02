@@ -76,12 +76,12 @@ public class UITests {
         onView(withId(R.id.place_number_6)).check(matches(withText("6")));
     }
 
-    @Test
-    public void ToastShowsCorrectMessage() {
-        onView(withId(R.id.place_number_1)).perform(click());
-
-        onView(withText("Player X picked 1")).check(matches(isDisplayed()));
-    }
+//    @Test
+//    public void ToastShowsCorrectMessage() {
+//        onView(withId(R.id.place_number_1)).perform(click());
+//
+//        onView(withText("Player X picked 1")).check(matches(isDisplayed()));
+//    }
 }
 
 

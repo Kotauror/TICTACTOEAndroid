@@ -4,12 +4,12 @@ import com.core.tictactoe.Board;
 import com.core.tictactoe.Game;
 import com.core.tictactoe.Player;
 
-public class GameEngine extends Game {
+public class MobileGame extends Game {
     private Board board;
     private Player active;
     private Player passive;
 
-    public GameEngine(Board board, Player playerOne, Player playerTwo) {
+    public MobileGame(Board board, Player playerOne, Player playerTwo) {
         this.board = board;
         this.active = playerOne;
         this.passive = playerTwo;
