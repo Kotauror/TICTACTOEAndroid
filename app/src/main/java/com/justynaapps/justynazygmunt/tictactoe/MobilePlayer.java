@@ -6,8 +6,6 @@ import com.core.tictactoe.Player;
 
 public class MobilePlayer extends Player {
 
-//    private String sign;
-
     public MobilePlayer(String sign) {
         super(sign);
     }

@@ -24,11 +24,11 @@ public class MoveListener implements View.OnClickListener {
             int numberPickedByUser = Integer.parseInt(this.singleGrid.getText().toString());
             this.gameEngine.playMove(numberPickedByUser);
             updateView(numberPickedByUser);
-//            showToast(numberPickedByUser);
-            // send signal that move mwas made by human
-            // np. do game engine
-            // afterClick()
-            // Messanger.InformOfMove(numberPickedByUser, gameEngine.getPassivePlayer().getSign();)
+            // here in the future:
+            // 1. afterClick() method - sends signal that the move was made to trigger other actions.
+            // 2. Messanger.InformOfMove(numberPickedByUser, gameEngine.getPassivePlayer().getSign();)
+
+            // showToast(numberPickedByUser);
         }
     }
 
