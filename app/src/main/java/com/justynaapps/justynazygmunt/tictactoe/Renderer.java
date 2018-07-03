@@ -19,13 +19,13 @@ public class Renderer {
         }
     }
 
-    protected TextView getTextViewForId(int i) {
-        int idOfWindowInMobileGrid = this.activity.getResources().getIdentifier("place_number_" + i, "id", this.activity.getPackageName());
-        return this.activity.findViewById(idOfWindowInMobileGrid);
-    }
-
-    protected void removeListenerForID(int computerPosition) {
+    public void removeListenerForID(int computerPosition) {
         TextView textView = getTextViewForId(computerPosition);
         textView.setOnClickListener(null);
+    }
+
+    private TextView getTextViewForId(int i) {
+        int idOfWindowInMobileGrid = this.activity.getResources().getIdentifier("place_number_" + i, "id", this.activity.getPackageName());
+        return this.activity.findViewById(idOfWindowInMobileGrid);
     }
 }
