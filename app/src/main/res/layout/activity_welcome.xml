@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".WelcomeActivity">
+
+    <Button
+        android:id="@+id/enterTTTButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:onClick="moveToNextPagePage"
+        android:text="CLICK"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeToTTT" />
+
+    <TextView
+        android:id="@+id/welcomeToTTT"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginEnd="37dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="92dp"
+        android:gravity="center"
+        android:text="@string/welcome_to_tic_tac_toe_game"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/cickButtonToEnter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.constraint.Barrier
+        android:id="@+id/barrier2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="511dp" />
+
+    <TextView
+        android:id="@+id/cickButtonToEnter"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginBottom="288dp"
+        android:layout_marginEnd="26dp"
+        android:text="@string/click_the_button_below_to_enter_the_game"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/welcomeToTTT"
+        app:layout_constraintTop_toBottomOf="@+id/welcomeToTTT" />
+</android.support.constraint.ConstraintLayout>
