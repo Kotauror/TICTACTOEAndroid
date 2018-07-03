@@ -21,12 +21,12 @@ public class MobileGame extends Game {
 
     public void afterClick() {
         if (this.getActivePlayer() instanceof ComputerPlayer && !this.getBoard().isWon() && !this.getBoard().isTie()) {
-            System.out.println("m in computer stuff");
             int computerPosition = getActivePlayer().pickPosition(this.getBoard());
             this.getBoard().putSignOnBoard(this.getActivePlayer().getSign(), computerPosition);
+            renderer.removeListenerForID(computerPosition);
             switchPlayers();
         }
-//        renderer.renderBoard();
+        renderer.renderBoard(getBoard());
     }
 
 }

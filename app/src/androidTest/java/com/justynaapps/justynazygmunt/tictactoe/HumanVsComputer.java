@@ -43,4 +43,14 @@ public class HumanVsComputer {
 
         onView(withId(R.id.place_number_1)).check(matches(withText("O")));
     }
+
+    @Test
+    public void playsAWinningGame() {
+        onView(withId(R.id.place_number_5)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+        onView(withId(R.id.place_number_3)).perform(click());
+        onView(withId(R.id.place_number_4)).perform(click());
+
+        onView(withId(R.id.place_number_6)).check(matches(withText("6")));
+    }
 }
