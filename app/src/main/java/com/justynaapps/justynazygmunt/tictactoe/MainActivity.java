@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         player1 = new MobilePlayer("X");
         player2 = new MobilePlayer("O");
         computerPlayer = new ComputerPlayer("O");
-        this.mobileGame = new MobileGame(board, player1, computerPlayer, renderer);
+        this.mobileGame = new MobileGame(board, player1, player2, renderer);
 
         renderer.renderBoard(board);
     }
