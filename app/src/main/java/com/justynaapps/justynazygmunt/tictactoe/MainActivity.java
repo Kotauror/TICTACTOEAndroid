@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
         String numberPickedByUser = ((TextView)view).getText().toString();
         if (this.mobileGame.getBoard().isNonTaken(numberPickedByUser) && !this.mobileGame.getBoard().isWon()) {
             this.mobileGame.playMove(Integer.parseInt(numberPickedByUser));
-            renderer.removeListenerForID(Integer.parseInt(numberPickedByUser));
             mobileGame.afterClick();
         }
     }

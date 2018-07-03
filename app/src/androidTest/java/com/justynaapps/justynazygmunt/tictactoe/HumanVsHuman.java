@@ -77,10 +77,18 @@ public class HumanVsHuman {
     }
 
     @Test
-    public void userGetRightMessageAfterMove() {
+    public void firstUserGetRightMessageAfterMove() {
         onView(withId(R.id.place_number_1)).perform(click());
 
-        onView(withId(R.id.messages)).check(matches(withText("Player X picked 1")));
+        onView(withId(R.id.messages)).check(matches(withText("Player X picked position 1")));
+    }
+
+    @Test
+    public void secondUserGetRightMessageAfterMove() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+
+        onView(withId(R.id.messages)).check(matches(withText("Player O picked position 2")));
     }
 }
 
