@@ -8,31 +8,17 @@
 
     <Button
         android:id="@+id/enterTTTButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="96dp"
+        android:layout_width="112dp"
+        android:layout_height="56dp"
+        android:layout_marginBottom="156dp"
         android:onClick="moveToNextPagePage"
         android:text="@string/play"
+        android:radius="3dip"
+        android:backgroundTint="@color/playGameButtonBackGround"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeToTTT" />
-
-    <TextView
-        android:id="@+id/welcomeToTTT"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="32dp"
-        android:layout_marginEnd="37dp"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="92dp"
-        android:gravity="center"
-        android:text="@string/welcome_to_tic_tac_toe_game"
-        android:textSize="28dp"
-        android:textColor="@color/WelcomeColor"
-        app:layout_constraintBottom_toTopOf="@+id/cickButtonToEnter"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/clickButtonToEnter" />
 
     <android.support.constraint.Barrier
         android:id="@+id/barrier2"
@@ -43,13 +29,27 @@
         tools:layout_editor_absoluteY="511dp" />
 
     <TextView
-        android:id="@+id/cickButtonToEnter"
+        android:id="@+id/clickButtonToEnter"
         android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginBottom="288dp"
-        android:layout_marginEnd="26dp"
+        android:layout_height="27dp"
+        android:layout_marginBottom="14dp"
         android:text="@string/click_the_button_below_to_enter_the_game"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/welcomeToTTT"
-        app:layout_constraintTop_toBottomOf="@+id/welcomeToTTT" />
+        app:layout_constraintBottom_toTopOf="@+id/enterTTTButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="97dp"
+        android:layout_marginEnd="58dp"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="82dp"
+        app:layout_constraintBottom_toTopOf="@+id/clickButtonToEnter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/tttlogo" />
 </android.support.constraint.ConstraintLayout>

@@ -30,11 +30,6 @@ public class WelcomeScreenUI {
     }
 
     @Test
-    public void hasWelcomeMessage() {
-        onView(withText("Welcome to Tic-Tac-Toe Game!")).check(matches(isDisplayed()));
-    }
-
-    @Test
     public void hasClickButtonMessage() {
         onView(withText("Click the button below to enter the game!")).check(matches(isDisplayed()));
     }
