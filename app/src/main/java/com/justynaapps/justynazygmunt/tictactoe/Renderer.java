@@ -24,8 +24,8 @@ public class Renderer {
         return this.activity.findViewById(idOfWindowInMobileGrid);
     }
 
-    protected void removeListenerForID(int PositionID) {
-        TextView textView = getTextViewForId(PositionID);
+    protected void removeListenerForID(int computerPosition) {
+        TextView textView = getTextViewForId(computerPosition);
         textView.setOnClickListener(null);
     }
 }

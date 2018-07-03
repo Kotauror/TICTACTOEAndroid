@@ -37,10 +37,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleSpaceOnClick(View view) {
-        String cellPickedByUser = ((TextView)view).getText().toString();
-        if (this.mobileGame.getBoard().isNonTaken(cellPickedByUser) && !this.mobileGame.getBoard().isWon()) {
-            this.mobileGame.playMove(Integer.parseInt(cellPickedByUser));
-            renderer.removeListenerForID(Integer.parseInt(cellPickedByUser));
+        String numberPickedByUser = ((TextView)view).getText().toString();
+        if (this.mobileGame.getBoard().isNonTaken(numberPickedByUser) && !this.mobileGame.getBoard().isWon()) {
+            this.mobileGame.playMove(Integer.parseInt(numberPickedByUser));
+            renderer.removeListenerForID(Integer.parseInt(numberPickedByUser));
             mobileGame.afterClick();
         }
     }
