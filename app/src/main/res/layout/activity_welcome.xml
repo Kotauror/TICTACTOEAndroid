@@ -14,7 +14,7 @@
         android:onClick="moveToNextPagePage"
         android:text="@string/play"
         android:radius="3dip"
-        android:backgroundTint="@color/playGameButtonBackGround"
+        android:backgroundTint="@color/buttonColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
