@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
         android:onClick="moveToNextPagePage"
-        android:text="CLICK"
+        android:text="@string/play"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/welcomeToTTT" />
@@ -28,6 +28,7 @@
         android:gravity="center"
         android:text="@string/welcome_to_tic_tac_toe_game"
         android:textSize="28dp"
+        android:textColor="@color/WelcomeColor"
         app:layout_constraintBottom_toTopOf="@+id/cickButtonToEnter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

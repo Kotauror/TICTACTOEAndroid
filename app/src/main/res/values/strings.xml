@@ -3,4 +3,5 @@
     <string name="tic_tac_toe">Tic Tac Toe</string>
     <string name="click_the_button_below_to_enter_the_game">Click the button below to enter the game!</string>
     <string name="welcome_to_tic_tac_toe_game">Welcome to Tic-Tac-Toe Game!</string>
+    <string name="play">PLAY</string>
 </resources>
