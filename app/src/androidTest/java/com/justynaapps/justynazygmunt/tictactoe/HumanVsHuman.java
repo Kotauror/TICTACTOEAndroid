@@ -15,7 +15,7 @@ import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * Instrumented test, which will execute on an Android device.
@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
  * @see <a href="http://d.android.com/tools/testing">Testing documentation</a>
  */
 @RunWith(AndroidJUnit4.class)
-public class UITests {
+public class HumanVsHuman {
 
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule =
@@ -37,19 +37,19 @@ public class UITests {
     }
 
     @Test
-    public void HasTicTacToeDisplayedOnMainScreen() {
+    public void hasTicTacToeDisplayedOnMainScreen() {
         onView(withText("TICTACTOE")).check(matches(isDisplayed()));
     }
 
     @Test
-    public void ClickedPlaceIsMarkedWithX() {
+    public void clickedPlaceIsMarkedWithX() {
         onView(withId(R.id.place_number_1)).perform(click());
 
         onView(withId(R.id.place_number_1)).check(matches(withText("X")));
     }
 
     @Test
-    public void ClickedPlaceIsMarkedWithO() {
+    public void clickedPlaceIsMarkedWithO() {
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_2)).perform(click());
 
@@ -57,7 +57,7 @@ public class UITests {
     }
 
     @Test
-    public void UserCannotChangeOnceClickedPlace() {
+    public void userCannotChangeOnceClickedPlace() {
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_1)).perform(click());
 
@@ -65,7 +65,7 @@ public class UITests {
     }
 
     @Test
-    public void UserCannotTickAPlaceOnceGameIsOver() {
+    public void userCannotTickAPlaceOnceGameIsOver() {
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_4)).perform(click());
         onView(withId(R.id.place_number_2)).perform(click());
@@ -75,13 +75,6 @@ public class UITests {
 
         onView(withId(R.id.place_number_6)).check(matches(withText("6")));
     }
-
-//    @Test
-//    public void ToastShowsCorrectMessage() {
-//        onView(withId(R.id.place_number_1)).perform(click());
-//
-//        onView(withText("Player X picked 1")).check(matches(isDisplayed()));
-//    }
 }
 
 

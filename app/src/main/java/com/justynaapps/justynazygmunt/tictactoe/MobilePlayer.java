@@ -1,17 +1,16 @@
 package com.justynaapps.justynazygmunt.tictactoe;
 
 import com.core.tictactoe.Board;
-import com.core.tictactoe.CommandLineUi;
 import com.core.tictactoe.Player;
 
 public class MobilePlayer extends Player {
 
     public MobilePlayer(String sign) {
-        super(sign);
+        super(sign, null);
     }
 
     @Override
-    public int pickPosition(CommandLineUi commandLineUi, Board board) {
+    public int pickPosition(Board board) {
         return 0;
     }
 

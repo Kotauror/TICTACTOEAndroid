@@ -6,12 +6,24 @@ import com.core.tictactoe.Player;
 
 public class MobileGame extends Game {
 
-    public MobileGame(Board board, Player playerOne, Player playerTwo) {
-        super(null, board, playerOne, playerTwo);
+    private Renderer renderer;
+
+    public MobileGame(Board board, Player playerOne, Player playerTwo, Renderer renderer) {
+        super(board, playerOne, playerTwo);
+        this.renderer = renderer;
     }
 
     public void playMove(int position) {
-        this.getBoard().putSignOnBoard(this.getActivePlayer().getSign(), position);
+        this.putSingOnBoard(position);
         this.switchPlayers();
+        renderer.renderBoard(getBoard());
+    }
+
+    public void afterClick() {
+        if (this.getActivePlayer().getType().equals("Computer") && !this.getBoard().isWon() && !this.getBoard().isTie()) {
+            int computerPosition = getActivePlayer().pickPosition(this.getBoard());
+            playMove(computerPosition);
+            renderer.removeListenerForID(computerPosition);
+        }
     }
 }
