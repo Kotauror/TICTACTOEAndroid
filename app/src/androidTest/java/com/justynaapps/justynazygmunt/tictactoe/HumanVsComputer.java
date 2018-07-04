@@ -53,4 +53,11 @@ public class HumanVsComputer {
 
         onView(withId(R.id.place_number_6)).check(matches(withText("6")));
     }
+
+    @Test
+    public void userLearnsAboutComputerMove() {
+        onView(withId(R.id.place_number_1)).perform(click());
+
+        onView(withId(R.id.messages)).check(matches(withText("Player O picked position 5")));
+    }
 }

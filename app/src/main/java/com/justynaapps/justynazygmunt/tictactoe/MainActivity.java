@@ -1,5 +1,6 @@
 package com.justynaapps.justynazygmunt.tictactoe;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         player1 = new MobilePlayer("X");
         player2 = new MobilePlayer("O");
         computerPlayer = new ComputerPlayer("O");
-        this.mobileGame = new MobileGame(board, player1, computerPlayer, renderer);
+        this.mobileGame = new MobileGame(board, player1, player2, renderer);
 
         renderer.renderBoard(board);
     }
@@ -40,8 +41,22 @@ public class MainActivity extends AppCompatActivity {
         String numberPickedByUser = ((TextView)view).getText().toString();
         if (this.mobileGame.getBoard().isNonTaken(numberPickedByUser) && !this.mobileGame.getBoard().isWon()) {
             this.mobileGame.playMove(Integer.parseInt(numberPickedByUser));
-            renderer.removeListenerForID(Integer.parseInt(numberPickedByUser));
             mobileGame.afterClick();
+            afterGame();
+        }
+    }
+
+    private void afterGame() {
+        if (mobileGame.getBoard().isWon()) {
+            Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
+            Bundle bundleWithWinnerSign = new Bundle();
+            bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
+            intent.putExtras(bundleWithWinnerSign);
+            startActivity(intent);
+        }
+        if (mobileGame.getBoard().isTie()) {
+            Intent intent = new Intent(MainActivity.this, TieActivity.class);
+            startActivity(intent);
         }
     }
 }

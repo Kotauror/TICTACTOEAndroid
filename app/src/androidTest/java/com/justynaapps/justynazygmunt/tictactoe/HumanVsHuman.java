@@ -12,7 +12,6 @@ import org.junit.runner.RunWith;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -37,26 +36,6 @@ public class HumanVsHuman {
     }
 
     @Test
-    public void hasTicTacToeDisplayedOnMainScreen() {
-        onView(withText("TICTACTOE")).check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void clickedPlaceIsMarkedWithX() {
-        onView(withId(R.id.place_number_1)).perform(click());
-
-        onView(withId(R.id.place_number_1)).check(matches(withText("X")));
-    }
-
-    @Test
-    public void clickedPlaceIsMarkedWithO() {
-        onView(withId(R.id.place_number_1)).perform(click());
-        onView(withId(R.id.place_number_2)).perform(click());
-
-        onView(withId(R.id.place_number_2)).check(matches(withText("O")));
-    }
-
-    @Test
     public void userCannotChangeOnceClickedPlace() {
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_1)).perform(click());
@@ -65,15 +44,56 @@ public class HumanVsHuman {
     }
 
     @Test
-    public void userCannotTickAPlaceOnceGameIsOver() {
+    public void firstUserGetRightMessageAfterMove() {
+        onView(withId(R.id.place_number_1)).perform(click());
+
+        onView(withId(R.id.messages)).check(matches(withText("Player X picked position 1")));
+    }
+
+    @Test
+    public void secondUserGetRightMessageAfterMove() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+
+        onView(withId(R.id.messages)).check(matches(withText("Player O picked position 2")));
+    }
+
+    @Test
+    public void playerXIsInformOfAWonGame() {
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_4)).perform(click());
         onView(withId(R.id.place_number_2)).perform(click());
         onView(withId(R.id.place_number_5)).perform(click());
         onView(withId(R.id.place_number_3)).perform(click());
+
+        onView(withId(R.id.playerSign)).check(matches(withText("X")));
+    }
+
+    @Test
+    public void playerOIsInformOfAWonGame() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_4)).perform(click());
+        onView(withId(R.id.place_number_8)).perform(click());
+        onView(withId(R.id.place_number_5)).perform(click());
+        onView(withId(R.id.place_number_9)).perform(click());
         onView(withId(R.id.place_number_6)).perform(click());
 
-        onView(withId(R.id.place_number_6)).check(matches(withText("6")));
+        onView(withId(R.id.playerSign)).check(matches(withText("O")));
+    }
+
+    @Test
+    public void tellsItsADraw() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_5)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+        onView(withId(R.id.place_number_3)).perform(click());
+        onView(withId(R.id.place_number_7)).perform(click());
+        onView(withId(R.id.place_number_4)).perform(click());
+        onView(withId(R.id.place_number_6)).perform(click());
+        onView(withId(R.id.place_number_9)).perform(click());
+        onView(withId(R.id.place_number_8)).perform(click());
+
+        onView(withId(R.id.drawMessage)).check(matches(withText("It's a draw!")));
     }
 }
 
