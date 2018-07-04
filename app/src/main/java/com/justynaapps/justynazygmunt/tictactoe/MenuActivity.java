@@ -15,6 +15,8 @@ public class MenuActivity extends AppCompatActivity {
 
     public void playGameButtonClicked(View view) {
         Intent intent = new Intent(MenuActivity.this, MainActivity.class);
+        // get the numbers from the menu and create a bundle with instances from PlayersFactory
+
         startActivity(intent);
     }
 }
