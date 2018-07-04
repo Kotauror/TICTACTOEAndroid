@@ -23,6 +23,10 @@ public class MobileGame extends Game {
     }
 
     public void afterClick() {
+        computerMove();
+    }
+
+    private void computerMove() {
         if (this.getActivePlayer() instanceof ComputerPlayer && !this.getBoard().isWon() && !this.getBoard().isTie()) {
             int computerPosition = getActivePlayer().pickPosition(this.getBoard());
             playMove(computerPosition);

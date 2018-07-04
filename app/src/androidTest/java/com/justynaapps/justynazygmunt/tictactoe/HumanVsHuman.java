@@ -90,6 +90,18 @@ public class HumanVsHuman {
 
         onView(withId(R.id.messages)).check(matches(withText("Player O picked position 2")));
     }
+
+    @Test
+    public void userIsInformOfAWonGame() {
+        onView(withId(R.id.place_number_1)).perform(click());
+        onView(withId(R.id.place_number_4)).perform(click());
+        onView(withId(R.id.place_number_2)).perform(click());
+        onView(withId(R.id.place_number_5)).perform(click());
+        onView(withId(R.id.place_number_3)).perform(click());
+        onView(withId(R.id.place_number_6)).perform(click());
+
+        onView(withId(R.id.playerSign)).check(matches(withText("X")));
+    }
 }
 
 
