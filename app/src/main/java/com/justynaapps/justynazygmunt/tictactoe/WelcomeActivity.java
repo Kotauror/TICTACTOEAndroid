@@ -17,7 +17,7 @@ public class WelcomeActivity extends AppCompatActivity {
         enterTTTButton = (Button) findViewById(R.id.enterTTTButton);
     }
 
-    public void moveToNextPagePage(View view) {
+    public void moveToNextPageOnClick(View view) {
         Intent jumpPage = new Intent(WelcomeActivity.this, MainActivity.class);
         startActivity(jumpPage);
     }

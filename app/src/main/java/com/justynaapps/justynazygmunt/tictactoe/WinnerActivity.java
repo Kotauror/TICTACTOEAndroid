@@ -24,7 +24,7 @@ public class WinnerActivity extends AppCompatActivity {
         playerSignTextView.setText(winnerSign);
     }
 
-    public void moveToNextPagePage(View view) {
+    public void moveToNextPageOnClick(View view) {
         Intent intent = new Intent(WinnerActivity.this, WelcomeActivity.class);
         startActivity(intent);
     }

@@ -12,8 +12,6 @@ import org.junit.runner.RunWith;
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
-import static android.support.test.espresso.matcher.ViewMatchers.isCompletelyDisplayed;
-import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,36 +33,6 @@ public class HumanVsHuman {
         Context appContext = InstrumentationRegistry.getTargetContext();
 
         assertEquals("com.justynaapps.justynazygmunt.tictactoe", appContext.getPackageName());
-    }
-
-    @Test
-    public void hasTicTacToeDisplayedOnMainScreen() {
-        onView(withText("TICTACTOE")).check(matches(isDisplayed()));
-    }
-
-    @Test
-    public void testOfDisplayOfWholeTable() {
-        onView(withId(R.id.tableLayout)).check(matches(isCompletelyDisplayed()));
-    }
-
-    @Test
-    public void testOfDisplayOfSingleField() {
-        onView(withId(R.id.place_number_1)).check(matches(isCompletelyDisplayed()));
-    }
-
-    @Test
-    public void clickedPlaceIsMarkedWithX() {
-        onView(withId(R.id.place_number_1)).perform(click());
-
-        onView(withId(R.id.place_number_1)).check(matches(withText("X")));
-    }
-
-    @Test
-    public void clickedPlaceIsMarkedWithO() {
-        onView(withId(R.id.place_number_1)).perform(click());
-        onView(withId(R.id.place_number_2)).perform(click());
-
-        onView(withId(R.id.place_number_2)).check(matches(withText("O")));
     }
 
     @Test

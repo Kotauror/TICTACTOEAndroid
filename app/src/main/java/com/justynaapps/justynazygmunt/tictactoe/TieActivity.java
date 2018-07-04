@@ -13,7 +13,7 @@ public class TieActivity extends AppCompatActivity {
         setContentView(R.layout.activity_tie);
     }
 
-    public void moveToNextPagePage(View view) {
+    public void moveToNextPageOnClick(View view) {
         Intent intent = new Intent(TieActivity.this, WelcomeActivity.class);
         startActivity(intent);
     }

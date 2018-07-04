@@ -11,7 +11,7 @@
         android:layout_width="112dp"
         android:layout_height="56dp"
         android:layout_marginBottom="156dp"
-        android:onClick="moveToNextPagePage"
+        android:onClick="moveToNextPageOnClick"
         android:text="@string/play"
         android:radius="3dip"
         android:backgroundTint="@color/buttonColor"
