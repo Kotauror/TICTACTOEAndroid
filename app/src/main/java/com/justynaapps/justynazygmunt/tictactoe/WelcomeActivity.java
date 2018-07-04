@@ -18,7 +18,7 @@ public class WelcomeActivity extends AppCompatActivity {
     }
 
     public void moveToNextPageOnClick(View view) {
-        Intent jumpPage = new Intent(WelcomeActivity.this, MainActivity.class);
+        Intent jumpPage = new Intent(WelcomeActivity.this, MenuActivity.class);
         startActivity(jumpPage);
     }
 }

@@ -15,16 +15,16 @@ import static android.support.test.espresso.intent.matcher.IntentMatchers.hasCom
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
 
 @RunWith(AndroidJUnit4.class)
-public class WelcomeScreenToMainActivity {
+public class WelcomeScreenToMenuActivity {
 
     @Rule
     public IntentsTestRule<WelcomeActivity> welcomeActivityTestRule =
             new IntentsTestRule<>(WelcomeActivity.class);
 
     @Test
-    public void clickOnButtonSendsToMainActivity() {
+    public void clickOnButtonSendsToMenuActivity() {
         onView(withId(R.id.enterTTTButton)).perform(click());
 
-        intended(hasComponent(MainActivity.class.getName()));
+        intended(hasComponent(MenuActivity.class.getName()));
     }
 }

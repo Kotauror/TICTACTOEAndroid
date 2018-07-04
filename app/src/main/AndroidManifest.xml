@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WinnerActivity" />
-        <activity android:name=".TieActivity"></activity>
+        <activity android:name=".TieActivity" />
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>
