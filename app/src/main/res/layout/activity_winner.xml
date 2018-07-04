@@ -11,7 +11,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="71dp"
+        android:layout_marginTop="50dp"
         android:gravity="center"
         android:text="Player"
         android:textSize="20dp"
@@ -23,12 +23,12 @@
     <TextView
         android:id="@+id/playerSign"
         android:layout_width="0dp"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
 
-        android:layout_marginBottom="79dp"
+        android:layout_marginBottom="64dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="98dp"
+        android:layout_marginTop="66dp"
         android:gravity="center"
         android:textSize="30dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView5"
@@ -51,11 +51,23 @@
         android:id="@+id/imageView5"
         android:layout_width="166dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="115dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="28dp"
+        app:layout_constraintBottom_toTopOf="@+id/playAgainButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerSign"
         app:srcCompat="@drawable/cup" />
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="68dp"
+        android:text="Play again"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="moveToNextPagePage"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
 
 </android.support.constraint.ConstraintLayout>
