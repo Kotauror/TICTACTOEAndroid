@@ -25,7 +25,7 @@ public class WinnerActivity extends AppCompatActivity {
     }
 
     public void moveToNextPagePage(View view) {
-        Intent jumpPage = new Intent(WinnerActivity.this, WelcomeActivity.class);
-        startActivity(jumpPage);
+        Intent intent = new Intent(WinnerActivity.this, WelcomeActivity.class);
+        startActivity(intent);
     }
 }

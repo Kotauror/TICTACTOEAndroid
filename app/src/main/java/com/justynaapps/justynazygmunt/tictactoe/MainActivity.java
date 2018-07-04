@@ -48,15 +48,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void afterGame() {
         if (mobileGame.getBoard().isWon()) {
-            Intent jumpPage = new Intent(MainActivity.this, WinnerActivity.class);
+            Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
             Bundle bundleWithWinnerSign = new Bundle();
             bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
-            jumpPage.putExtras(bundleWithWinnerSign);
-            startActivity(jumpPage);
+            intent.putExtras(bundleWithWinnerSign);
+            startActivity(intent);
         }
         if (mobileGame.getBoard().isTie()) {
-            Intent jumpPage = new Intent(MainActivity.this, TieActivity.class);
-            startActivity(jumpPage);
+            Intent intent = new Intent(MainActivity.this, TieActivity.class);
+            startActivity(intent);
         }
     }
 }

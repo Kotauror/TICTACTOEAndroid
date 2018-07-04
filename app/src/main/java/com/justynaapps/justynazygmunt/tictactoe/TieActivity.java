@@ -14,7 +14,7 @@ public class TieActivity extends AppCompatActivity {
     }
 
     public void moveToNextPagePage(View view) {
-        Intent jumpPage = new Intent(TieActivity.this, WelcomeActivity.class);
-        startActivity(jumpPage);
+        Intent intent = new Intent(TieActivity.this, WelcomeActivity.class);
+        startActivity(intent);
     }
 }
