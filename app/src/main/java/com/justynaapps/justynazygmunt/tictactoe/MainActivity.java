@@ -7,32 +7,30 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.core.tictactoe.Board;
-import com.core.tictactoe.ComputerPlayer;
+import com.core.tictactoe.Player;
 
 public class MainActivity extends AppCompatActivity {
 
     private Renderer renderer;
     private MobileGame mobileGame;
-    private MobilePlayer player1;
-    private MobilePlayer player2;
-    private ComputerPlayer computerPlayer;
+    private MobilePlayersFactory mobilePlayersFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         renderer = new Renderer(this);
+        mobilePlayersFactory = new MobilePlayersFactory();
+        Bundle bundle = getIntent().getExtras();
+        int gameMode = bundle.getInt("GameModeIndicator");
 
-        createGame();
+        createGame(gameMode);
     }
 
-    private void createGame() {
+    private void createGame(int gameMode) {
         Board board = new Board(3);
-        player1 = new MobilePlayer("X");
-        player2 = new MobilePlayer("O");
-        computerPlayer = new ComputerPlayer("O");
-        this.mobileGame = new MobileGame(board, player1, player2, renderer);
+        Player[] players = mobilePlayersFactory.getPlayers(gameMode);
+        this.mobileGame = new MobileGame(board, players[0], players[1], renderer);
 
         renderer.renderBoard(board);
     }

@@ -22,10 +22,21 @@ public class WelcomeScreenToMenuActivity {
             new IntentsTestRule<>(WelcomeActivity.class);
 
     @Test
-    public void clickOnButtonSendsToMenuActivity() {
+    public void clickOnButtonSendsToMenuActivityForHvsH() {
         onView(withId(R.id.enterTTTButton)).perform(click());
+        onView(withId(R.id.humanVsHuman)).perform(click());
+        onView(withId(R.id.startTheGameButton)).perform(click());
+
+        intended(hasComponent(MainActivity.class.getName()));
+    }
+
+    @Test
+    public void clickOnButtonSendsToMenuActivityForHvsComp() {
+        onView(withId(R.id.enterTTTButton)).perform(click());
+        onView(withId(R.id.humanVsComputer)).perform(click());
         onView(withId(R.id.startTheGameButton)).perform(click());
 
         intended(hasComponent(MainActivity.class.getName()));
     }
 }
+

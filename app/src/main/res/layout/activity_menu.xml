@@ -7,7 +7,7 @@
     tools:context=".MenuActivity">
 
     <RadioGroup
-        android:id="@+id/radioGroup"
+        android:id="@+id/gameModeRadioGroup"
         android:layout_width="230dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
-            android:checked="true"
+            android:checked="false"
+            android:onClick="gameModeOptionClick"
             android:text="Human vs Human" />
 
         <RadioButton
@@ -31,6 +32,7 @@
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:checked="false"
+            android:onClick="gameModeOptionClick"
             android:text="Human vs Computer" />
     </RadioGroup>
 
@@ -43,8 +45,8 @@
         android:text="Pick game mode:"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-        app:layout_constraintStart_toStartOf="@+id/radioGroup" />
+        app:layout_constraintBottom_toTopOf="@+id/gameModeRadioGroup"
+        app:layout_constraintStart_toStartOf="@+id/gameModeRadioGroup" />
 
     <Button
         android:id="@+id/startTheGameButton"
