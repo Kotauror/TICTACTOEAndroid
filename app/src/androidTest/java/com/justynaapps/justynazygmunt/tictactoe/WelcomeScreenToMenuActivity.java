@@ -24,7 +24,8 @@ public class WelcomeScreenToMenuActivity {
     @Test
     public void clickOnButtonSendsToMenuActivity() {
         onView(withId(R.id.enterTTTButton)).perform(click());
+        onView(withId(R.id.startTheGameButton)).perform(click());
 
-        intended(hasComponent(MenuActivity.class.getName()));
+        intended(hasComponent(MainActivity.class.getName()));
     }
 }
