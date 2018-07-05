@@ -35,15 +35,23 @@ public class MainActivity extends AppCompatActivity {
 
     private void afterGame() {
         if (mobileGame.getBoard().isWon()) {
-            Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
-            Bundle bundleWithWinnerSign = new Bundle();
-            bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
-            intent.putExtras(bundleWithWinnerSign);
-            startActivity(intent);
+            startWonGameActivity();
         }
         if (mobileGame.getBoard().isTie()) {
-            Intent intent = new Intent(MainActivity.this, TieActivity.class);
-            startActivity(intent);
+            startTieGameActivity();
         }
+    }
+
+    private void startWonGameActivity() {
+        Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
+        Bundle bundleWithWinnerSign = new Bundle();
+        bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
+        intent.putExtras(bundleWithWinnerSign);
+        startActivity(intent);
+    }
+
+    private void startTieGameActivity() {
+        Intent intent = new Intent(MainActivity.this, TieActivity.class);
+        startActivity(intent);
     }
 }
