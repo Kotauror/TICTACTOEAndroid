@@ -34,16 +34,37 @@
             android:checked="false"
             android:onClick="gameModeOptionClick"
             android:text="Human vs Computer" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/whoGoesFirstRadioGroup"
+        android:layout_width="230dp"
+        android:layout_height="174dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="168dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <RadioButton
-            android:id="@+id/computerVsHuman"
+            android:id="@+id/humanGoesFirst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:onClick="gameModeOptionClick"
-            android:text="Computer vs Human" />
+            android:onClick="gameOrderClick"
+            android:text="human first" />
+
+        <RadioButton
+            android:id="@+id/computerGoesFirst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="gameOrderClick"
+            android:text="computer first" />
     </RadioGroup>
 
     <TextView
@@ -70,15 +91,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/playersExplanation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="3dp"
-        android:text="First player vs Second Player"
-        android:textSize="10dp"
-        app:layout_constraintStart_toStartOf="@+id/gameModePrompt"
-        app:layout_constraintTop_toTopOf="@+id/gameModeRadioGroup" />
 
 </android.support.constraint.ConstraintLayout>

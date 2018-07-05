@@ -17,10 +17,10 @@ public class MobileGamesFactory {
         this.createGameOptions();
     }
 
-    public MobileGame getGame(int gameModeOption) {
+    public MobileGame getGame(MobileGameMode gameModeOption) {
         for(Map.Entry<MobileGameMode, MobileGame> mobileGame : this.mobileGamesOptions.entrySet()) {
             MobileGameMode gameMode = mobileGame.getKey();
-            if (gameMode.value() == gameModeOption) {
+            if (gameMode.value() == gameModeOption.value()) {
                 return mobileGame.getValue();
             }
         }

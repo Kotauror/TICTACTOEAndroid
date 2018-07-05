@@ -28,7 +28,29 @@ public class MenuActivity extends AppCompatActivity {
         toggleStartGameButton(true);
         RadioGroup gameModeRadioGroup = (RadioGroup) findViewById(R.id.gameModeRadioGroup);
         int gameMode = gameModeRadioGroup.getCheckedRadioButtonId();
-        intent.putExtra("GameModeIndicator", gameMode);
+        View radioButton = gameModeRadioGroup.findViewById(gameMode);
+        int index = gameModeRadioGroup.indexOfChild(radioButton);
+        RadioGroup whoGoesFirstRadioGroup = (RadioGroup) findViewById(R.id.whoGoesFirstRadioGroup);
+        if (index == 0) {
+            intent.putExtra("GameModeIndicator", MobileGameMode.HUMAN_VS_HUMAN);
+            whoGoesFirstRadioGroup.setVisibility(View.INVISIBLE);
+        } else {
+            toggleStartGameButton(false);
+            whoGoesFirstRadioGroup.setVisibility(View.VISIBLE);
+        }
+    }
+
+    public void gameOrderClick(View view) {
+        RadioGroup computerGameOrder = (RadioGroup) findViewById(R.id.whoGoesFirstRadioGroup);
+        int gameMode = computerGameOrder.getCheckedRadioButtonId();
+        View radioButton = computerGameOrder.findViewById(gameMode);
+        int index = computerGameOrder.indexOfChild(radioButton);
+        toggleStartGameButton(true);
+        if (index == 0) {
+            intent.putExtra("GameModeIndicator", MobileGameMode.HUMAN_VS_COMPUTER);
+        } else {
+            intent.putExtra("GameModeIndicator", MobileGameMode.COMPUTER_VS_HUMAN);
+        }
     }
 
     public void playGameButtonClicked(View view) {

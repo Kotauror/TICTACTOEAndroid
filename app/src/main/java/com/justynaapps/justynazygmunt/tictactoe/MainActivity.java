@@ -18,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         Renderer renderer = new Renderer(this);
         MobileGamesFactory mobileGamesFactory = new MobileGamesFactory(renderer);
         Bundle bundle = getIntent().getExtras();
-        int gameMode = bundle.getInt("GameModeIndicator");
+        MobileGameMode gameMode = (MobileGameMode) bundle.getSerializable("GameModeIndicator");
+        System.out.println("IN MAIN ACTIVITT INT: " + gameMode);
 
         this.mobileGame = mobileGamesFactory.getGame(gameMode);
         renderer.renderBoard(mobileGame.getBoard());
