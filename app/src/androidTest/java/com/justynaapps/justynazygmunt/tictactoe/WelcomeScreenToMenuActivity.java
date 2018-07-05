@@ -36,7 +36,7 @@ public class WelcomeScreenToMenuActivity {
         onView(withId(R.id.humanVsComputer)).perform(click());
         onView(withId(R.id.startTheGameButton)).perform(click());
 
-        intended(hasComponent(MainActivity.class.getName()));
+        intended(hasComponent(WinnerActivity.class.getName()));
     }
 }
 

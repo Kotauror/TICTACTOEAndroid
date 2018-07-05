@@ -9,9 +9,9 @@
     <RadioGroup
         android:id="@+id/gameModeRadioGroup"
         android:layout_width="230dp"
-        android:layout_height="wrap_content"
+        android:layout_height="174dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="44dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -34,31 +34,51 @@
             android:checked="false"
             android:onClick="gameModeOptionClick"
             android:text="Human vs Computer" />
+
+        <RadioButton
+            android:id="@+id/computerVsHuman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="gameModeOptionClick"
+            android:text="Computer vs Human" />
     </RadioGroup>
 
     <TextView
         android:id="@+id/gameModePrompt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
         android:text="Pick game mode:"
         android:textColor="@color/colorPrimary"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/gameModeRadioGroup"
-        app:layout_constraintStart_toStartOf="@+id/gameModeRadioGroup" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/startTheGameButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="61dp"
-        android:text="Start the game "
         android:backgroundTint="@color/colorPrimary"
+        android:onClick="playGameButtonClicked"
+        android:text="Start the game "
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="playGameButtonClicked"/>
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/playersExplanation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:text="First player vs Second Player"
+        android:textSize="10dp"
+        app:layout_constraintStart_toStartOf="@+id/gameModePrompt"
+        app:layout_constraintTop_toTopOf="@+id/gameModeRadioGroup" />
 
 </android.support.constraint.ConstraintLayout>

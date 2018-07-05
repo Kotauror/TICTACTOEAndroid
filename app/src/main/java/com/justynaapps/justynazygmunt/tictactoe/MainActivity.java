@@ -16,12 +16,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Renderer renderer = new Renderer(this);
-        MobileGamesFactory mobileGamesFactory = new MobileGamesFactory();
+        MobileGamesFactory mobileGamesFactory = new MobileGamesFactory(renderer);
         Bundle bundle = getIntent().getExtras();
         int gameMode = bundle.getInt("GameModeIndicator");
 
-        this.mobileGame = mobileGamesFactory.getGame(gameMode, renderer);
+        this.mobileGame = mobileGamesFactory.getGame(gameMode);
         renderer.renderBoard(mobileGame.getBoard());
+
+        handleFirstComputerMove();
+    }
+
+
+    private void handleFirstComputerMove() {
+        if (mobileGame.getActivePlayer().getType().equals("Computer")) {
+            mobileGame.handleComputerMove();
+        }
     }
 
     public void handleSpaceOnClick(View view) {
