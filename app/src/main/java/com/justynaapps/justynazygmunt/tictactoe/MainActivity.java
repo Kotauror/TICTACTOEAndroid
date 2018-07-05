@@ -6,33 +6,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.core.tictactoe.Board;
-import com.core.tictactoe.Player;
-
 public class MainActivity extends AppCompatActivity {
 
-    private Renderer renderer;
     private MobileGame mobileGame;
-    private MobilePlayersFactory mobilePlayersFactory;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        renderer = new Renderer(this);
-        mobilePlayersFactory = new MobilePlayersFactory();
+
+        Renderer renderer = new Renderer(this);
+        MobileGamesFactory mobileGamesFactory = new MobileGamesFactory();
         Bundle bundle = getIntent().getExtras();
         int gameMode = bundle.getInt("GameModeIndicator");
 
-        createGame(gameMode);
-    }
-
-    private void createGame(int gameMode) {
-        Board board = new Board(3);
-        Player[] players = mobilePlayersFactory.getPlayers(gameMode);
-        this.mobileGame = new MobileGame(board, players[0], players[1], renderer);
-
-        renderer.renderBoard(board);
+        this.mobileGame = mobileGamesFactory.getGame(gameMode, renderer);
+        renderer.renderBoard(mobileGame.getBoard());
     }
 
     public void handleSpaceOnClick(View view) {
