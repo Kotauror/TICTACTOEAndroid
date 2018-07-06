@@ -8,16 +8,17 @@
     tools:layout_editor_absoluteY="81dp">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/playerInfo2"
         android:layout_width="0dp"
-        android:layout_height="29dp"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginTop="73dp"
-        android:text="Player 2:"
+        android:layout_height="36dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="74dp"
+        android:text="Player Two:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/playerTwoRG"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintStart_toEndOf="@+id/playerInfo"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
@@ -30,7 +31,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/playerTwoRG"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView">
+        app:layout_constraintTop_toBottomOf="@+id/playerInfo">
 
         <RadioButton
             android:id="@+id/playerOneHuman"
@@ -62,7 +63,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/playerOneRG"
-        app:layout_constraintTop_toBottomOf="@+id/textView6">
+        app:layout_constraintTop_toBottomOf="@+id/playerInfo2">
 
         <RadioButton
             android:id="@+id/playerTwoHuman"
@@ -90,27 +91,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"
-        android:backgroundTint="@color/colorPrimary"
+        android:backgroundTint="@color/disabledButton"
+        android:enabled="false"
         android:onClick="playGameButtonClicked"
         android:text="Start the game "
         android:textColor="@color/white"
-        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playerOneRG" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/playerInfo"
         android:layout_width="0dp"
-        android:layout_height="30dp"
-        android:layout_marginBottom="18dp"
-        android:layout_marginEnd="118dp"
-        android:layout_marginStart="48dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="73dp"
-        android:text="Player 1:"
+        android:text="Player One:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/playerOneRG"
-        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintEnd_toStartOf="@+id/playerInfo2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

@@ -23,13 +23,6 @@ public class MenuActivity extends AppCompatActivity {
         toggleStartGameButton();
     }
 
-    private void toggleStartGameButton() {
-        if (playerFirstSelectedFlag && playerSecondSelectedFlag) {
-            Button startTheGameButton = findViewById(R.id.startTheGameButton);
-            startTheGameButton.setEnabled(true);
-        }
-    }
-
     public void playerOneRGClicked(View view) {
         playerFirstSelectedFlag = true;
         toggleStartGameButton();
@@ -70,5 +63,13 @@ public class MenuActivity extends AppCompatActivity {
         String gameMode = player1.value() + player2.value();
         intent.putExtra("GameModeIndicator", gameMode);
         startActivity(intent);
+    }
+
+    private void toggleStartGameButton() {
+        if (playerFirstSelectedFlag && playerSecondSelectedFlag) {
+            Button startTheGameButton = findViewById(R.id.startTheGameButton);
+            startTheGameButton.setBackgroundTintList(this.getResources().getColorStateList(R.color.colorPrimary, null));
+            startTheGameButton.setEnabled(true);
+        }
     }
 }
