@@ -16,6 +16,6 @@ public class MobilePlayer extends Player {
 
     @Override
     public String getType() {
-        return null;
+        return "MobilePlayer";
     }
 }

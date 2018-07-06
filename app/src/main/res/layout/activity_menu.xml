@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/playerInfo2"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginTop="74dp"
+        android:text="Player Two:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/playerTwoRG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerInfo"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <RadioGroup
+        android:id="@+id/playerOneRG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="253dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/playerTwoRG"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerInfo">
+
+        <RadioButton
+            android:id="@+id/playerOneHuman"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerOneRGClicked"
+            android:text="Human" />
+
+        <RadioButton
+            android:id="@+id/playerOneComputer"
+            android:layout_width="113dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerOneRGClicked"
+            android:text="Computer" />
+    </RadioGroup>
+
+    <RadioGroup
+        android:id="@+id/playerTwoRG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="253dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerOneRG"
+        app:layout_constraintTop_toBottomOf="@+id/playerInfo2">
+
+        <RadioButton
+            android:id="@+id/playerTwoHuman"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerTwoRGClicked"
+            android:text="Human" />
+
+        <RadioButton
+            android:id="@+id/playerTwoComputer"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerTwoRGClicked"
+            android:text="Computer" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/startTheGameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="@color/disabledButton"
+        android:enabled="false"
+        android:onClick="playGameButtonClicked"
+        android:text="Start the game "
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerOneRG" />
+
+    <TextView
+        android:id="@+id/playerInfo"
+        android:layout_width="0dp"
+        android:layout_height="36dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="73dp"
+        android:text="Player One:"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/playerOneRG"
+        app:layout_constraintEnd_toStartOf="@+id/playerInfo2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
