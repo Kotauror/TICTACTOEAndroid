@@ -4,7 +4,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/lighttttlogo"
+        android:icon="@drawable/officon"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -22,7 +22,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WinnerActivity" />
-        <activity android:name=".TieActivity"></activity>
+        <activity android:name=".TieActivity" />
+        <activity android:name=".MenuActivity"></activity>
     </application>
 
 </manifest>

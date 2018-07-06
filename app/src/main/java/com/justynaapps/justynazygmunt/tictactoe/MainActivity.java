@@ -6,35 +6,23 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import com.core.tictactoe.Board;
-import com.core.tictactoe.ComputerPlayer;
-
 public class MainActivity extends AppCompatActivity {
 
-    private Renderer renderer;
     private MobileGame mobileGame;
-    private MobilePlayer player1;
-    private MobilePlayer player2;
-    private ComputerPlayer computerPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        renderer = new Renderer(this);
 
-        createGame();
-    }
+        Renderer renderer = new Renderer(this);
+        MobileGamesFactory mobileGamesFactory = new MobileGamesFactory(renderer);
+        Bundle bundle = getIntent().getExtras();
+        MobileGameMode gameMode = (MobileGameMode) bundle.getSerializable("GameModeIndicator");
 
-    private void createGame() {
-        Board board = new Board(3);
-        player1 = new MobilePlayer("X");
-        player2 = new MobilePlayer("O");
-        computerPlayer = new ComputerPlayer("O");
-        this.mobileGame = new MobileGame(board, player1, player2, renderer);
-
-        renderer.renderBoard(board);
+        this.mobileGame = mobileGamesFactory.getGame(gameMode);
+        renderer.renderBoard(mobileGame.getBoard());
+        handleFirstComputerMove();
     }
 
     public void handleSpaceOnClick(View view) {
@@ -46,17 +34,31 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void handleFirstComputerMove() {
+        if (mobileGame.getActivePlayer().getType().equals("Computer")) {
+            mobileGame.handleComputerMove();
+        }
+    }
+
     private void afterGame() {
         if (mobileGame.getBoard().isWon()) {
-            Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
-            Bundle bundleWithWinnerSign = new Bundle();
-            bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
-            intent.putExtras(bundleWithWinnerSign);
-            startActivity(intent);
+            startWonGameActivity();
         }
         if (mobileGame.getBoard().isTie()) {
-            Intent intent = new Intent(MainActivity.this, TieActivity.class);
-            startActivity(intent);
+            startTieGameActivity();
         }
+    }
+
+    private void startWonGameActivity() {
+        Intent intent = new Intent(MainActivity.this, WinnerActivity.class);
+        Bundle bundleWithWinnerSign = new Bundle();
+        bundleWithWinnerSign.putString("winnerSign", mobileGame.getBoard().winnerSign());
+        intent.putExtras(bundleWithWinnerSign);
+        startActivity(intent);
+    }
+
+    private void startTieGameActivity() {
+        Intent intent = new Intent(MainActivity.this, TieActivity.class);
+        startActivity(intent);
     }
 }
