@@ -25,18 +25,18 @@ public class MainActivity extends AppCompatActivity {
         handleFirstComputerMove();
     }
 
-    private void handleFirstComputerMove() {
-        if (mobileGame.getActivePlayer().getType().equals("Computer")) {
-            mobileGame.handleComputerMove();
-        }
-    }
-
     public void handleSpaceOnClick(View view) {
         String numberPickedByUser = ((TextView)view).getText().toString();
         if (this.mobileGame.getBoard().isNonTaken(numberPickedByUser) && !this.mobileGame.getBoard().isWon()) {
             this.mobileGame.playMove(Integer.parseInt(numberPickedByUser));
             mobileGame.afterClick();
             afterGame();
+        }
+    }
+
+    private void handleFirstComputerMove() {
+        if (mobileGame.getActivePlayer().getType().equals("Computer")) {
+            mobileGame.handleComputerMove();
         }
     }
 
