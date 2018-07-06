@@ -4,83 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".MenuActivity"
+    tools:layout_editor_absoluteY="81dp">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="0dp"
+        android:layout_height="29dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginTop="73dp"
+        android:text="Player 2:"
+        app:layout_constraintBottom_toTopOf="@+id/playerTwoRG"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/gameModeRadioGroup"
-        android:layout_width="230dp"
+        android:id="@+id/playerOneRG"
+        android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="329dp"
+        android:layout_marginBottom="253dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/gameModePrompt"
-        app:layout_constraintTop_toBottomOf="@+id/gameModePrompt">
-
-        <RadioButton
-            android:id="@+id/humanVsHuman"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="20dp"
-            android:checked="false"
-            android:onClick="gameModeOptionClick"
-            android:text="Human vs Human" />
-
-        <RadioButton
-            android:id="@+id/humanVsComputer"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="20dp"
-            android:checked="false"
-            android:onClick="gameModeOptionClick"
-            android:text="Human vs Computer" />
-
-    </RadioGroup>
-
-    <RadioGroup
-        android:id="@+id/whoGoesFirstRadioGroup"
-        android:layout_width="230dp"
-        android:layout_height="108dp"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="224dp"
-        android:visibility="invisible"
+        app:layout_constraintEnd_toStartOf="@+id/playerTwoRG"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <RadioButton
-            android:id="@+id/humanGoesFirst"
-            android:layout_width="wrap_content"
+            android:id="@+id/playerOneHuman"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="20dp"
             android:checked="false"
-            android:onClick="gameOrderClick"
+            android:onClick="playerOneRGClicked"
             android:text="Human" />
 
         <RadioButton
-            android:id="@+id/computerGoesFirst"
-            android:layout_width="wrap_content"
+            android:id="@+id/playerOneComputer"
+            android:layout_width="113dp"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:checked="false"
-            android:onClick="gameOrderClick"
+            android:onClick="playerOneRGClicked"
             android:text="Computer" />
     </RadioGroup>
 
-    <TextView
-        android:id="@+id/gameModePrompt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="42dp"
-        android:text="Pick game mode:"
-        android:textColor="@color/colorPrimary"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/gameModeRadioGroup"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <RadioGroup
+        android:id="@+id/playerTwoRG"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="253dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/playerOneRG"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <RadioButton
+            android:id="@+id/playerTwoHuman"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerTwoRGClicked"
+            android:text="Human" />
+
+        <RadioButton
+            android:id="@+id/playerTwoComputer"
+            android:layout_width="136dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="20dp"
+            android:checked="false"
+            android:onClick="playerTwoRGClicked"
+            android:text="Computer" />
+    </RadioGroup>
 
     <Button
         android:id="@+id/startTheGameButton"
@@ -91,22 +94,24 @@
         android:onClick="playGameButtonClicked"
         android:text="Start the game "
         android:textColor="@color/white"
+        android:enabled="false"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/playerOneRG" />
 
     <TextView
-        android:id="@+id/whoGoesFirstPrompt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="260dp"
-        android:layout_marginStart="8dp"
-        android:text="Pick who goest first:"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/whoGoesFirstRadioGroup"
-        app:layout_constraintTop_toBottomOf="@+id/gameModeRadioGroup"
-        app:layout_constraintVertical_bias="0.0" />
+        android:id="@+id/textView"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="18dp"
+        android:layout_marginEnd="118dp"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="73dp"
+        android:text="Player 1:"
+        app:layout_constraintBottom_toTopOf="@+id/playerOneRG"
+        app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

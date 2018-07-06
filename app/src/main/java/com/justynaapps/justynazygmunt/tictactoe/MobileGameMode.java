@@ -2,17 +2,17 @@ package com.justynaapps.justynazygmunt.tictactoe;
 
 public enum MobileGameMode {
 
-    HUMAN_VS_HUMAN(0),
-    HUMAN_VS_COMPUTER(1),
-    COMPUTER_VS_HUMAN(2);
+    HUMAN_VS_HUMAN("11"),
+    HUMAN_VS_COMPUTER("12"),
+    COMPUTER_VS_HUMAN("21");
 
-    private final int value;
+    private final String value;
 
-    MobileGameMode(int gameModeString) {
+    MobileGameMode(String gameModeString) {
         this.value = gameModeString;
     }
 
-    public int value() {
+    public String value() {
         return this.value;
     }
 }

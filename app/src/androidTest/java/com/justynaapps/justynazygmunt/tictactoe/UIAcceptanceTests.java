@@ -26,7 +26,8 @@ public class UIAcceptanceTests {
     @Test
     public void welcomeActivityToAWonHumanVsHumanGame() {
         onView(withId(R.id.enterTTTButton)).perform(click());
-        onView(withId(R.id.humanVsHuman)).perform(click());
+        onView(withId(R.id.playerOneHuman)).perform(click());
+        onView(withId(R.id.playerTwoHuman)).perform(click());
         onView(withId(R.id.startTheGameButton)).perform(click());
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_4)).perform(click());
@@ -41,8 +42,8 @@ public class UIAcceptanceTests {
     @Test
     public void welcomeActivityToTieHumanVsComputerGame() {
         onView(withId(R.id.enterTTTButton)).perform(click());
-        onView(withId(R.id.humanVsComputer)).perform(click());
-        onView(withId(R.id.humanGoesFirst)).perform(click());
+        onView(withId(R.id.playerOneHuman)).perform(click());
+        onView(withId(R.id.playerTwoComputer)).perform(click());
         onView(withId(R.id.startTheGameButton)).perform(click());
         onView(withId(R.id.place_number_1)).perform(click());
         onView(withId(R.id.place_number_2)).perform(click());
@@ -57,8 +58,8 @@ public class UIAcceptanceTests {
     @Test
     public void welcomeActivityToTieComputerVsHumanGame() {
         onView(withId(R.id.enterTTTButton)).perform(click());
-        onView(withId(R.id.humanVsComputer)).perform(click());
-        onView(withId(R.id.computerGoesFirst)).perform(click());
+        onView(withId(R.id.playerOneComputer)).perform(click());
+        onView(withId(R.id.playerTwoHuman)).perform(click());
         onView(withId(R.id.startTheGameButton)).perform(click());
         onView(withId(R.id.place_number_5)).perform(click());
         onView(withId(R.id.place_number_3)).perform(click());
