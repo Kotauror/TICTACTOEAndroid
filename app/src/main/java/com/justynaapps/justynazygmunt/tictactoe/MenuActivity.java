@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 
 public class MenuActivity extends AppCompatActivity {
 
@@ -30,13 +31,16 @@ public class MenuActivity extends AppCompatActivity {
         View radioButton = gameModeRadioGroup.findViewById(gameMode);
         int index = gameModeRadioGroup.indexOfChild(radioButton);
         RadioGroup whoGoesFirstRadioGroup = (RadioGroup) findViewById(R.id.whoGoesFirstRadioGroup);
+        TextView whoGoesFirstPrompt = findViewById(R.id.whoGoesFirstPrompt);
         if (index == 0) {
             toggleStartGameButton(true);
             intent.putExtra("GameModeIndicator", MobileGameMode.HUMAN_VS_HUMAN);
             whoGoesFirstRadioGroup.setVisibility(View.INVISIBLE);
+            whoGoesFirstPrompt.setVisibility(View.INVISIBLE);
         } else {
             toggleStartGameButton(false);
             whoGoesFirstRadioGroup.setVisibility(View.VISIBLE);
+            whoGoesFirstPrompt.setVisibility(View.VISIBLE);
         }
     }
 

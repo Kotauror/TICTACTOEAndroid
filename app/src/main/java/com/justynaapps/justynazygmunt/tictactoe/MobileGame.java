@@ -12,13 +12,6 @@ public class MobileGame extends Game {
     public MobileGame(Board board, Player playerOne, Player playerTwo, Renderer renderer) {
         super(board, playerOne, playerTwo);
         this.renderer = renderer;
-        handleFirstComputerMove();
-    }
-
-    private void handleFirstComputerMove() {
-        if (this.getActivePlayer().getType().equals("Computer")) {
-            this.handleComputerMove();
-        }
     }
 
     public void playMove(int position) {
