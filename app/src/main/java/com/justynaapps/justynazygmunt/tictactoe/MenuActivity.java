@@ -25,13 +25,13 @@ public class MenuActivity extends AppCompatActivity {
     }
 
     public void gameModeOptionClick(View view) {
-        toggleStartGameButton(true);
         RadioGroup gameModeRadioGroup = (RadioGroup) findViewById(R.id.gameModeRadioGroup);
         int gameMode = gameModeRadioGroup.getCheckedRadioButtonId();
         View radioButton = gameModeRadioGroup.findViewById(gameMode);
         int index = gameModeRadioGroup.indexOfChild(radioButton);
         RadioGroup whoGoesFirstRadioGroup = (RadioGroup) findViewById(R.id.whoGoesFirstRadioGroup);
         if (index == 0) {
+            toggleStartGameButton(true);
             intent.putExtra("GameModeIndicator", MobileGameMode.HUMAN_VS_HUMAN);
             whoGoesFirstRadioGroup.setVisibility(View.INVISIBLE);
         } else {

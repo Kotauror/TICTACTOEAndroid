@@ -23,15 +23,6 @@ public class MainActivity extends AppCompatActivity {
 
         this.mobileGame = mobileGamesFactory.getGame(gameMode);
         renderer.renderBoard(mobileGame.getBoard());
-
-        handleFirstComputerMove();
-    }
-
-
-    private void handleFirstComputerMove() {
-        if (mobileGame.getActivePlayer().getType().equals("Computer")) {
-            mobileGame.handleComputerMove();
-        }
     }
 
     public void handleSpaceOnClick(View view) {
